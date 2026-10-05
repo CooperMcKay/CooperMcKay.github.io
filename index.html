@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooper McKay</title>
+<meta name="description" content="Cooper McKay — Toronto-based, Associate at Wealthsimple, builder of AI-powered automations, triathlete.">
+<meta name="color-scheme" content="light">
+
+<meta property="og:title" content="Cooper McKay">
+<meta property="og:description" content="Toronto-based, Associate at Wealthsimple, builder of AI-powered automations, triathlete.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://coopermckay.github.io/">
+<meta property="og:image" content="https://coopermckay.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cooper McKay, personal web">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cooper McKay">
+<meta name="twitter:description" content="Toronto-based, Associate at Wealthsimple, builder of AI-powered automations, triathlete.">
+<meta name="twitter:image" content="https://coopermckay.github.io/og-image.png">
+<link rel="canonical" href="https://coopermckay.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:     #FFFFFF;
+    --ink:       #16171A;
+    --ink-soft:  #55575D;
+    --ink-faint: #8A8C92;
+    --accent:    #17516B;
+
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --spine: 8.5rem;   /* width of the section-label column */
+    --gutter: 2.5rem;
+    --measure: 34rem;  /* reading measure for body copy */
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.62;
+    font-weight: 380;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  strong { font-weight: 640; color: var(--ink); }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    padding-bottom: 1px;
+    transition: color .18s ease;
+  }
+  a:hover { color: var(--accent); }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    padding: 5rem 0 4.5rem;
+    display: grid;
+    grid-template-columns: var(--spine) minmax(0, 1fr);
+    column-gap: var(--gutter);
+    align-items: start;
+  }
+
+  .portrait {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 2px;
+  }
+
+  .nameline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 1.1rem;
+    row-gap: .35rem;
+    margin-bottom: .4rem;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -.012em;
+    margin: 0;
+  }
+
+  .profiles {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .9rem;
+    row-gap: .3rem;
+    font-family: var(--sans);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .profiles a { padding-bottom: 2px; }
+
+  .standfirst {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 30rem;
+  }
+
+  /* ---------- Sections ---------- */
+
+  section {
+    display: grid;
+    grid-template-columns: var(--spine) minmax(0, 1fr);
+    column-gap: var(--gutter);
+    padding-bottom: 5.5rem;
+  }
+  #interests-block { padding-bottom: 3.5rem; }
+
+  .label {
+    font-family: var(--sans);
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+
+    /* The line box is set to the height of the first line of content beside
+       it, so the label optically aligns with that line. Sections whose first
+       line is a different size override it below. */
+    margin: 0;
+    line-height: 27.5px;
+  }
+  #experience { line-height: 30px; }  /* matches the Wealthsimple h3 line box */
+  #ai { line-height: 21px; }          /* matches the "Personal" subhead */
+
+  /* Cap-height alignment. The label and the first line of content are set in
+     different faces and sizes, so equal line boxes still leave the capitals
+     off by a few pixels. These offsets were measured against each section's
+     actual first letter and pull the label down onto that cap line. */
+  #experience { margin-top: -5.35px; }
+  #ai         { margin-top: -0.41px; }
+  #athletics  { margin-top: -3.69px; }
+  #interests  { margin-top: -4.18px; }
+  #contact    { margin-top: -4.08px; }
+
+  .body > * + * { margin-top: 1.4rem; }
+  .body p { max-width: var(--measure); margin: 0; }
+
+  /* ---------- Bullet lists ---------- */
+
+  ul.bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: var(--measure);
+  }
+
+  ul.bullets > li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  ul.bullets > li + li { margin-top: .95rem; }
+
+  ul.bullets > li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    line-height: inherit;
+  }
+
+  .bullets span { color: var(--ink-soft); }
+
+  /* Nested detail under a parent bullet: en-dash marker, one step in. */
+  ul.bullets ul.sub {
+    margin-top: .4rem;
+    padding-left: .25rem;
+  }
+  ul.bullets ul.sub > li { padding-left: 1.1rem; }
+  ul.bullets ul.sub > li + li { margin-top: .3rem; }
+  ul.bullets ul.sub > li::before {
+    content: "–";
+    color: var(--ink-faint);
+  }
+
+  .date,
+  .bullets span.date {
+    font-family: var(--sans);
+    font-size: .75rem;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  /* Marks work that is underway rather than finished.
+     Selector matches .bullets span so it wins on specificity. */
+  .bullets span.tag {
+    font-family: var(--sans);
+    font-size: .625rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    vertical-align: .1em;
+  }
+
+  /* Secondary roles: set smaller than the Wealthsimple entry above it,
+     with a wider measure so the dates stay on one line. */
+  .roles {
+    max-width: 40rem;
+    font-size: .9375rem;
+    line-height: 1.55;
+  }
+  ul.bullets.roles > li + li { margin-top: .3rem; }
+  .roles .date { font-size: .6875rem; }
+
+  /* ---------- Highlight entry ---------- */
+
+  /* No bullet: the Wealthsimple heading is a group title, so it sits flush
+     left with the "Internships & university work" title below it. */
+  .highlight h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.014em;
+    line-height: 1.25;
+    margin: 0 0 .3rem;
+  }
+
+  .role { margin: 0 0 .2rem; font-size: 1.0625rem; }
+
+  /* Program detail sits a step below the heading above it: smaller,
+     unbolded, tightly grouped. */
+  .program {
+    font-size: .9375rem;
+    line-height: 1.55;
+  }
+  ul.bullets.program > li + li { margin-top: .3rem; }
+  .program strong { font-weight: inherit; }
+
+  .when {
+    font-family: var(--sans);
+    font-size: .75rem;
+    letter-spacing: .05em;
+    color: var(--ink-faint);
+    margin: 0 0 1.15rem;
+  }
+
+  /* Selector is scoped to .body so it outranks the generic
+     `.body > * + *` stack spacing above. */
+  .body > .sub-label {
+    font-family: var(--sans);
+    font-size: .8125rem;
+    font-weight: 700;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 2.25rem 0 1.25rem;
+  }
+  .body > .sub-label:first-child { margin-top: 0; }
+
+  /* Empty slot awaiting real content. */
+  .placeholder { color: var(--ink-faint); font-style: italic; }
+
+  .closer { margin-top: 2.25rem !important; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    display: grid;
+    grid-template-columns: var(--spine) minmax(0, 1fr);
+    column-gap: var(--gutter);
+  }
+  footer .bullets > li + li { margin-top: .55rem; }
+
+  /* ---------- Motion ---------- */
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; }
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width: 40rem) {
+    body { font-size: 16.5px; }
+    .wrap { padding: 0 1.25rem 4rem; }
+
+    .masthead,
+    section,
+    footer {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 1rem;
+    }
+
+    .masthead { padding: 3rem 0 3rem; row-gap: 1.5rem; }
+    .standfirst { font-size: 1.25rem; }
+
+    section { padding-bottom: 3rem; }
+    .label { position: static; margin: 0 0 .25rem; }
+
+    .highlight h3 { font-size: 1.3125rem; }
+    .date { display: block; white-space: normal; }
+  }
+</style>
+<script>document.documentElement.className += ' js';</script>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <img class="portrait" src="portrait.jpg" width="80" height="80" alt="Cooper McKay">
+    <div>
+      <div class="nameline">
+        <h1>Cooper McKay</h1>
+        <nav class="profiles" aria-label="Profiles">
+          <a href="https://www.linkedin.com/in/cooper-mckay/">LinkedIn</a>
+          <a href="https://x.com/c00per_mckay">X</a>
+          <a href="https://github.com/CooperMcKay">GitHub</a>
+        </nav>
+      </div>
+      <p class="standfirst">Toronto, learning</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="reveal" aria-labelledby="experience">
+      <h2 class="label" id="experience">Experience</h2>
+      <div class="body">
+
+        <article class="highlight">
+          <h3>Wealthsimple</h3>
+          <p class="role"><strong>Associate, Accelerator Program</strong> — Inaugural Cohort · Toronto</p>
+          <p class="when">Present</p>
+          <ul class="bullets program">
+            <li>Post-graduate rotational program</li>
+            <li>Assigned three 6-month rotations across the first 18 months</li>
+            <li>Goal is to optimize process across many business areas</li>
+          </ul>
+        </article>
+
+        <p class="sub-label">Internships &amp; university work</p>
+        <ul class="bullets roles">
+          <li><strong>Boston Consulting Group</strong> <span>— Special Projects, Toronto</span> <span class="date">Jan–Apr 2026</span></li>
+          <li><strong>Lactalis Canada</strong> <span>— Corporate Strategy &amp; Development, Toronto</span> <span class="date">Jan–Apr 2025</span></li>
+          <li><strong>CKF Inc.</strong> <span>— Business Strategy &amp; Innovation, Toronto</span> <span class="date">May–Sep 2024</span></li>
+          <li><strong>City of Toronto</strong> <span>— Lifeguard &amp; Swim Instructor</span> <span class="date">Seasonal, 2020–2024</span></li>
+          <li><strong>Wilfrid Laurier University</strong> <span>— Hawk Desk Attendant, Athletic Centre</span> <span class="date">Part-time hours during undergraduate</span></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="ai">
+      <h2 class="label" id="ai">AI &amp; Technology</h2>
+      <div class="body">
+
+        <p class="sub-label">Personal</p>
+        <ul class="bullets">
+          <li><strong>Personal systems</strong> — agents that plan my training week around swim and race load, categorize spending and flag drift from budget, and deliver a single morning summary of calendar, inbox, and to-dos.</li>
+          <li><strong>HomeOS</strong> <span class="tag">In progress</span> — an AI home-maintenance app for aging homeowners and the adult children who manage their parents' homes. A photo scan turns "is my furnace okay?" into a plain-language assessment, alongside a maintenance calendar, document vault, and spend tracker. Working React Native prototype, with a staged plan that validates the problem before building further.</li>
+          <li><strong>Strava training calendar</strong> <span class="tag">In progress</span> — imports a training plan from a PDF, lets me edit it, and automatically matches Strava activities to the planned workouts, so the week shows plan next to actual. Being built toward a ChatGPT app for Strava.</li>
+          <li><strong>Digitized wardrobe</strong> <span class="tag">In progress</span> — every piece I own captured as an interactive 3D model, so outfits can be assembled, browsed, and planned digitally before anything comes off the hanger.</li>
+          <li><strong>ESP32 wearable prototype</strong> <span class="tag">In progress</span> — connecting my love for fitness to my love for technology, on real hardware rather than in an app. Hardware is the future: the interesting problems are moving back to the physical layer.</li>
+        </ul>
+
+        <p class="sub-label">Built at BCG</p>
+        <ul class="bullets">
+          <li><strong>Automated internal newsletter</strong> — pulling and summarizing sources, drafting the issue, and formatting it for send, so the work that took hours took minutes.</li>
+          <li><strong>Zoom transcript formatter</strong> — turns raw call transcripts into clean, structured notes with decisions and action items pulled out.</li>
+        </ul>
+
+        <p class="closer">The pattern I keep chasing: find something I do the same way every week, describe it precisely enough for a model to run it, and check the output instead of doing the work.</p>
+
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="athletics">
+      <h2 class="label" id="athletics">Athletics</h2>
+      <div class="body">
+        <ul class="bullets">
+          <li>
+            <strong>Laurier Varsity Swim Team</strong> <span class="date">2022–2026</span>
+            <ul class="bullets sub">
+              <li><strong>4-year U Sports Academic All-Canadian</strong></li>
+              <li><strong>15+ hours per week</strong> of training</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Triathlon</strong>
+            <ul class="bullets sub">
+              <li><strong>2 completed Ironman Muskoka 70.3</strong> — 2024 and 2025</li>
+              <li><strong>Training for Ironman Texas</strong> <span class="tag">April 2027</span> — 2.4-mile swim, 112-mile bike, 26.2-mile run</li>
+            </ul>
+          </li>
+          <li>Endurance sports are what I grew up on, keeping me on schedule and sane my entire life.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="reveal" id="interests-block" aria-labelledby="interests">
+      <h2 class="label" id="interests">Interests</h2>
+      <div class="body">
+        <ul class="bullets">
+          <li>Skiing and snowboarding, surfing, basketball, golf</li>
+          <li>Non-fiction reading, chess, travel</li>
+          <li>Early-stage businesses and startups</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="reveal">
+    <h2 class="label" id="contact">Contact</h2>
+    <div class="body">
+      <ul class="bullets">
+        <li><strong>Toronto, Ontario</strong></li>
+        <li><a href="mailto:cooper-mckay@outlook.com"><strong>cooper-mckay@outlook.com</strong></a></li>
+        <li>Where you can find me: <a href="https://www.linkedin.com/in/cooper-mckay/">LinkedIn</a>, <a href="https://x.com/c00per_mckay">X</a>, and <a href="https://github.com/CooperMcKay">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // Gentle reveal on scroll. Skipped entirely when motion is reduced
+  // or when IntersectionObserver is unavailable.
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    for (var i = 0; i < targets.length; i++) targets[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  targets.forEach(function (t) { io.observe(t); });
+})();
+</script>
+</body>
+</html>
